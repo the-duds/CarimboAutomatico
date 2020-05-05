@@ -1,0 +1,293 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="TipoDocumento" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.TipoDocumento>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.TipoDocumento>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>654,947</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="22">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart sap:VirtualizedContainerService.HintSize="634,847" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:String" Name="IniciarRobo" />
+      <Variable x:TypeArguments="x:String" Name="NomeColab" />
+      <Variable x:TypeArguments="x:String" Name="SetorColab" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="PastaInicio" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="Iniciar" />
+      <Variable x:TypeArguments="ui:Window" Name="Instrucao" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5</av:PointCollection>
+        <x:Double x:Key="Height">811</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID6</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">200,107.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,158.5 300,204.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:MessageBox Buttons="OkCancel" Caption="CARIMBO AUTOMÁTICO" ChosenButton="[IniciarRobo]" DisplayName="Iniciar Carimbo" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;OLÁ, VOCÊ ESTÁ PRESTES A INICIAR O CARIMBO AUTOMÁTICO. PARA CONTINUAR APRETE &quot;&quot;OK&quot;&quot; OU &quot;&quot;CANCELAR&quot;&quot;PARA SAIR.&quot;]" TopMost="True">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MessageBox>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID0">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">200,204.5</av:Point>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">300,255.5 300,285.5 299.895,285.5 299.895,309.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:CustomInput Result="{x:Null}" DisplayName="Instruções" Height="630" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CustomInput_1" URI="Arquivos HTML\InformacaoInicial.html" Width="765">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CustomInput>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">168.895,309.5</av:Point>
+                  <av:Size x:Key="ShapeSize">262,60</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">299.895,369.5 299.895,399.5</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="Nome do Usuario do Windowns" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[NomeColab]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Environment.UserName]</InArgument>
+                </Assign.Value>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Assign>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">199.895,399.5</av:Point>
+                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">299.895,450.5 299.895,480.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InputDialog DisplayName="Setor Colaborador" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="INFORME O SEU SETOR" Options="[{&quot;ARQUIVO&quot;,&quot;CONTABIL&quot;, &quot;FISCAL&quot;, &quot;OBRIGACOES ACESSORIAS&quot;}]" Title="INFORME O SEU SETOR">
+                    <ui:InputDialog.Result>
+                      <OutArgument x:TypeArguments="x:String">[SetorColab]</OutArgument>
+                    </ui:InputDialog.Result>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InputDialog>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">199.895,480.5</av:Point>
+                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">299.895,531.5 299.895,561.5 299.79,561.5 299.79,581.5</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[SetorColab]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                        <Sequence x:Key="ARQUIVO" DisplayName="MANUTENÇÃO" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="MANUTENÇÃO" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;MODUILO EM DESENVOLVIMENTO!&quot;]" />
+                          <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="FIM DO PROGRAMA" />
+                        </Sequence>
+                        <ui:InputDialog x:Key="CONTABIL" DisplayName="PastaInicio" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="INFORME QUAL PASTA DESEJA TRABALHAR!" Options="[{&quot;CONTABIL&quot;,&quot; FISCAL&quot;}]" Title="INFORME QUAL PASTA DESEJA TRABALHAR!">
+                          <ui:InputDialog.Result>
+                            <OutArgument x:TypeArguments="ui:GenericValue">[PastaInicio]</OutArgument>
+                          </ui:InputDialog.Result>
+                        </ui:InputDialog>
+                        <Assign x:Key="FISCAL" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="ui:GenericValue">[PastaInicio]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="ui:GenericValue">["FISCAL"]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:InputDialog x:Key="OBRIGACOES ACESSORIAS" DisplayName="PastaInicio" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="INFORME QUAL PASTA DESEJA TRABALHAR!" Options="[{&quot;CONTABIL&quot;,&quot; FISCAL&quot;}]" Title="INFORME QUAL PASTA DESEJA TRABALHAR!">
+                          <ui:InputDialog.Result>
+                            <OutArgument x:TypeArguments="ui:GenericValue">[PastaInicio]</OutArgument>
+                          </ui:InputDialog.Result>
+                        </ui:InputDialog>
+                      </Switch>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">168.79,581.5</av:Point>
+                              <av:Size x:Key="ShapeSize">262,60</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">299.79,641.5 299.79,691.5</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="INICIAR " sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="ui:GenericValue">[Iniciar]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="ui:GenericValue">[SetorColab+"-"+PastaInicio]</InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID5">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">199.79,691.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Iniciar]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="CONTABIL-CONTABIL" DisplayName="Invoke GravaLançado workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Executor\GravaLançado.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_SetorColab">[SetorColab]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_NomeColab">[NomeColab]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_PastaInicio">[PastaInicio]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="CONTABIL-FISCAL" DisplayName="Invoke Visualiza workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Executor\Visualiza.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_PastaInicio">[PastaInicio]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_SetorColab">[SetorColab]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_NomeColab">[NomeColab]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <ui:CommentOut x:Key="FISCAL-CONTABIL" DisplayName="Modulo em Manutenção" sap:VirtualizedContainerService.HintSize="436,257" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Atividades Ignoradas" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke vivivivivizuzuzuzuzu workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Executor\vivivivivizuzuzuzuzu.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_SetorColab">[SetorColab]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_NomeColab">[NomeColab]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="In_PastaInicio">[PastaInicio]</InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                      </ui:InvokeWorkflowFile>
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                </ui:CommentOut>
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="FISCAL-FISCAL" DisplayName="Invoke GravaLançado workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Executor\GravaLançado.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_SetorColab">[SetorColab]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_NomeColab">[NomeColab]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_PastaInicio">[PastaInicio]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="OBRIGACOES ACESSORIAS-CONTABIL" DisplayName="Invoke Visualiza workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Executor\Visualiza.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_PastaInicio">[PastaInicio]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" x:Key="OBRIGACOES ACESSORIAS-FISCAL" DisplayName="Invoke Visualiza workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Executor\Visualiza.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="In_PastaInicio">[PastaInicio]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                              </Switch>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+  </Flowchart>
+</Activity>

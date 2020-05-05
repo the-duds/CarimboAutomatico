@@ -1,0 +1,807 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="vivivivivizuzuzuzuzu" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_SetorColab" Type="InArgument(x:String)" />
+    <x:Property Name="In_NomeColab" Type="InArgument(x:String)" />
+    <x:Property Name="In_PastaInicio" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>885,1430</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>vivivivivizuzuzuzuzu_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart DisplayName="vivivivivizuzuzuzuzu" sap:VirtualizedContainerService.HintSize="865,1430" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:String" Name="ContinuaCarimbo" />
+      <Variable x:TypeArguments="s:String[]" Name="files" />
+      <Variable x:TypeArguments="x:String" Name="PastaEmpresaV" />
+      <Variable x:TypeArguments="x:String" Name="PastaAnoV" />
+      <Variable x:TypeArguments="x:String" Name="PastaSetorV" />
+      <Variable x:TypeArguments="x:String" Name="PastaMesV" />
+      <Variable x:TypeArguments="x:String" Name="ProximaPasta" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="cont" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="MesCompAtual" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="AnoCompAtual" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="CompAtual" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="MesProxComp" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="ProximaCompetencia" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <x:Double x:Key="Width">831</x:Double>
+        <x:Double x:Key="Height">1393.5</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,144</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID5</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">450,1324</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="MISSÃO CONCLUIDA" DisplayName="Finaliza Robo" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[&quot;O ROBÔ FINALIZOU A SUA MISSÃO!&quot;]" TopMost="True">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MessageBox>
+    </FlowStep>
+    <FlowDecision x:Name="__ReferenceID0" Condition="[ProximaPasta=&quot;Yes&quot;]" DisplayName="CONTINUA LANÇAMENTO?" sap:VirtualizedContainerService.HintSize="153,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <av:Point x:Key="ShapeLocation">220.5,1306.5</av:Point>
+          <av:Size x:Key="ShapeSize">153,87</av:Size>
+          <av:PointCollection x:Key="TrueConnector">220.5,1350 139,1350 139,169.5 200,169.5</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">373.5,1350 403.5,1350 403.5,1349.5 450,1349.5</av:PointCollection>
+          <x:String x:Key="FalseLabel">Não</x:String>
+          <x:String x:Key="TrueLabel">Sim</x:String>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <FlowDecision.True>
+        <FlowStep x:Name="__ReferenceID5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">200,144</av:Point>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">300,195 300,225 356,225 356,236.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Buttons="Ok" Caption="CARIMBO AUTOMATICO" ChosenButton="[ContinuaCarimbo]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;SE VOCÊ DESEJA INICIAR O CARIMBO AUTOMATICO, APERTE OK E SELECIONE UMA PASTA.&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:MessageBox>
+          <FlowStep.Next>
+            <FlowDecision x:Name="__ReferenceID6" Condition="[ContinuaCarimbo=&quot;Ok&quot;]" DisplayName="CONTINUA?" sap:VirtualizedContainerService.HintSize="71,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <av:Point x:Key="ShapeLocation">320.5,236.5</av:Point>
+                  <av:Size x:Key="ShapeSize">71,87</av:Size>
+                  <av:PointCollection x:Key="TrueConnector">320.5,280 300,280 300,360</av:PointCollection>
+                  <av:PointCollection x:Key="FalseConnector">391.5,280 550,280 550,1324</av:PointCollection>
+                  <x:String x:Key="TrueLabel">Sim</x:String>
+                  <x:String x:Key="FalseLabel">Não</x:String>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <FlowDecision.True>
+                <FlowStep x:Name="__ReferenceID4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">169,360</av:Point>
+                      <av:Size x:Key="ShapeSize">262,60</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">300,420 300,444.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="LISTA EMPRESAS" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="s:String[]">[files]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="s:String[]">[Directory.GetDirectories("\\srvnucleo05\Arquivo_Digital\")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">200,444.5</av:Point>
+                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">300,495.5 300,510</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InputDialog DisplayName="SELECIONA PASTA EMPRESA" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="SELECIONE A PASTA DA EMPRESA" Options="[files]" Title="SELECIONE A PASTA DA EMPRESA">
+                        <ui:InputDialog.Result>
+                          <OutArgument x:TypeArguments="x:String">[PastaEmpresaV]</OutArgument>
+                        </ui:InputDialog.Result>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InputDialog>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">169,510</av:Point>
+                              <av:Size x:Key="ShapeSize">262,60</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">300,570 300,594.5</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[PastaSetorV]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[PastaEmpresaV+"\"+In_PastaInicio+"\"]</InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">200,594.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,645.5 300,674.5</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InputDialog DisplayName="SELECIONA PASTA ANO" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label="SELECIONE O ANO" Options="[Directory.GetDirectories(PastaSetorV)]" Title="SELECIONE O ANO">
+                                <ui:InputDialog.Result>
+                                  <OutArgument x:TypeArguments="x:String">[PastaAnoV]</OutArgument>
+                                </ui:InputDialog.Result>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InputDialog>
+                              <FlowStep.Next>
+                                <FlowStep x:Name="__ReferenceID9">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">200,674.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,725.5 300,750</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:InputDialog DisplayName="SELECIONA PASTA COMPETENCIA" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="SELECIONE O MES" Options="[Directory.GetDirectories(PastaAnoV)]" Title="SELECIONE O MES">
+                                    <ui:InputDialog.Result>
+                                      <OutArgument x:TypeArguments="x:String">[PastaMesV]</OutArgument>
+                                    </ui:InputDialog.Result>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:InputDialog>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID10">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">169,750</av:Point>
+                                          <av:Size x:Key="ShapeSize">262,60</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">300,810 300,854.5</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Assign DisplayName="LISTA TODOS ARQUIVOS" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="s:String[]">[files]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(PastaMesV,"*",SearchOption.AllDirectories)]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                      <FlowStep.Next>
+                                        <FlowStep x:Name="__ReferenceID13">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">200,854.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">300,905.5 300,994</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:MultipleAssign DisplayName="Varieveis de Manipulação de PASTAS" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                            <ui:MultipleAssign.AssignOperations>
+                                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                                  <ui:AssignOperation.To>
+                                                    <OutArgument x:TypeArguments="ui:GenericValue">[MesCompAtual]</OutArgument>
+                                                  </ui:AssignOperation.To>
+                                                  <ui:AssignOperation.Value>
+                                                    <InArgument x:TypeArguments="ui:GenericValue">[DateTime.Now.Month-1]</InArgument>
+                                                  </ui:AssignOperation.Value>
+                                                </ui:AssignOperation>
+                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                                  <ui:AssignOperation.To>
+                                                    <OutArgument x:TypeArguments="ui:GenericValue">[AnoCompAtual]</OutArgument>
+                                                  </ui:AssignOperation.To>
+                                                  <ui:AssignOperation.Value>
+                                                    <InArgument x:TypeArguments="ui:GenericValue">[DateTime.Now.Year]</InArgument>
+                                                  </ui:AssignOperation.Value>
+                                                </ui:AssignOperation>
+                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                                  <ui:AssignOperation.To>
+                                                    <OutArgument x:TypeArguments="ui:GenericValue">[CompAtual]</OutArgument>
+                                                  </ui:AssignOperation.To>
+                                                  <ui:AssignOperation.Value>
+                                                    <InArgument x:TypeArguments="ui:GenericValue">[MesCompAtual.ToString + "-"+ AnoCompAtual.ToString]</InArgument>
+                                                  </ui:AssignOperation.Value>
+                                                </ui:AssignOperation>
+                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                                  <ui:AssignOperation.To>
+                                                    <OutArgument x:TypeArguments="ui:GenericValue">[MesProxComp]</OutArgument>
+                                                  </ui:AssignOperation.To>
+                                                  <ui:AssignOperation.Value>
+                                                    <InArgument x:TypeArguments="ui:GenericValue">[DateTime.Now.Month]</InArgument>
+                                                  </ui:AssignOperation.Value>
+                                                </ui:AssignOperation>
+                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                                  <ui:AssignOperation.To>
+                                                    <OutArgument x:TypeArguments="ui:GenericValue">[ProximaCompetencia]</OutArgument>
+                                                  </ui:AssignOperation.To>
+                                                  <ui:AssignOperation.Value>
+                                                    <InArgument x:TypeArguments="ui:GenericValue">[MesProxComp.ToString+"-"+AnoCompAtual.ToString]</InArgument>
+                                                  </ui:AssignOperation.Value>
+                                                </ui:AssignOperation>
+                                              </scg:List>
+                                            </ui:MultipleAssign.AssignOperations>
+                                          </ui:MultipleAssign>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID3">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">200,994</av:Point>
+                                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                  <av:PointCollection x:Key="ConnectorLocation">300,1045 300,1100</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For each file" sap:VirtualizedContainerService.HintSize="314,200" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[files]">
+                                                <ui:ForEach.Body>
+                                                  <ActivityAction x:TypeArguments="x:String">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="x:String" Name="file" />
+                                                    </ActivityAction.Argument>
+                                                    <Sequence DisplayName="INTERAÇÃO COM O ARQUIVO" sap:VirtualizedContainerService.HintSize="426,1356" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                                      <Sequence.Variables>
+                                                        <Variable x:TypeArguments="x:String" Name="extensao" />
+                                                        <Variable x:TypeArguments="x:String" Name="nomeArquivo" />
+                                                        <Variable x:TypeArguments="ui:GenericValue" Name="FileTemp" />
+                                                        <Variable x:TypeArguments="ui:GenericValue" Name="ContC" />
+                                                        <Variable x:TypeArguments="ui:GenericValue" Name="DataChegada" />
+                                                      </Sequence.Variables>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <Assign DisplayName="CAPTURA EXTENSÃO DO ARQUIVO" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[extensao]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">[Path.GetExtension(file)]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <Assign DisplayName="CAPTURA NOME DO ARQUIVO" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[nomeArquivo]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">[Path.GetFileNameWithoutExtension(file)]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <If Condition="[nomeArquivo.Substring(0,1)=&quot;~&quot;]" DisplayName="SE ARQUIVO TEMPORARIO" sap:VirtualizedContainerService.HintSize="384,51" sap2010:WorkflowViewState.IdRef="If_1">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If.Then>
+                                                          <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                                                        </If.Then>
+                                                      </If>
+                                                      <ui:MultipleAssign DisplayName="DATA DA CHEGADA" sap:VirtualizedContainerService.HintSize="384,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                                        <ui:MultipleAssign.AssignOperations>
+                                                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                                                              <ui:AssignOperation.To>
+                                                                <OutArgument x:TypeArguments="ui:GenericValue">[ContC]</OutArgument>
+                                                              </ui:AssignOperation.To>
+                                                              <ui:AssignOperation.Value>
+                                                                <InArgument x:TypeArguments="ui:GenericValue">[file.LastIndexOf("\")]</InArgument>
+                                                              </ui:AssignOperation.Value>
+                                                            </ui:AssignOperation>
+                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                                                              <ui:AssignOperation.To>
+                                                                <OutArgument x:TypeArguments="ui:GenericValue">[DataChegada]</OutArgument>
+                                                              </ui:AssignOperation.To>
+                                                              <ui:AssignOperation.Value>
+                                                                <InArgument x:TypeArguments="ui:GenericValue">[file.Substring(ContC-10, 10)]</InArgument>
+                                                              </ui:AssignOperation.Value>
+                                                            </ui:AssignOperation>
+                                                          </scg:List>
+                                                        </ui:MultipleAssign.AssignOperations>
+                                                      </ui:MultipleAssign>
+                                                      <Assign DisplayName="RETIRA ESPAÇOS DO NOME DO ARQUIVO" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="ui:GenericValue">[FileTemp]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="ui:GenericValue">[PastaMesV+"\"+DataChegada+"\"+nomeArquivo.Replace(" ","")+extensao]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <ui:MoveFile ContinueOnError="True" Destination="[FileTemp]" DisplayName="MUDA NOME DO ARQUIVO" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[file]">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </ui:MoveFile>
+                                                      <Sequence DisplayName="TRATA ARQUIVO" sap:VirtualizedContainerService.HintSize="384,507" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                        <Sequence.Variables>
+                                                          <Variable x:TypeArguments="ui:Browser" Name="browser" />
+                                                          <Variable x:TypeArguments="x:String" Name="ArquivoLancado" />
+                                                          <Variable x:TypeArguments="x:String" Name="DocumentoFiscal" />
+                                                          <Variable x:TypeArguments="x:String" Name="CompetenciaAtual" />
+                                                          <Variable x:TypeArguments="ui:GenericValue" Name="cont" />
+                                                        </Sequence.Variables>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <Switch x:TypeArguments="x:String" DisplayName="ABRE ARQUIVO DE ARCODO COM A EXTENSAO" Expression="[extensao]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Switch`1_6">
+                                                          <Switch.Default>
+                                                            <Sequence sap:VirtualizedContainerService.HintSize="426,413" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="384,59" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[&quot;O TIPO DE DOCUMENTO NÃO FOI IDENTIFICADO! SEU ARQUIVO SERÁ RENOMEADO!&quot;]" TopMost="True" />
+                                                              <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PastaMesV+&quot;\DOCUMENTO NÃO IDENTIFICADO -&quot;+nomeArquivo +extensao]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_6" Overwrite="False" Path="[FileTemp]" />
+                                                              <ui:Continue sap:VirtualizedContainerService.HintSize="384,22" sap2010:WorkflowViewState.IdRef="Continue_8" />
+                                                            </Sequence>
+                                                          </Switch.Default>
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" x:Key=".pdf" BrowserType="Chrome" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="OpenBrowser_6" UiBrowser="[browser]" Url="[FileTemp]">
+                                                            <ui:OpenBrowser.Body>
+                                                              <ActivityAction x:TypeArguments="x:Object">
+                                                                <ActivityAction.Argument>
+                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                                </ActivityAction.Argument>
+                                                              </ActivityAction>
+                                                            </ui:OpenBrowser.Body>
+                                                          </ui:OpenBrowser>
+                                                          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" x:Key=".xlsx" FileName="[FileTemp]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="StartProcess_6" />
+                                                          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" x:Key=".docx" FileName="[FileTemp]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="StartProcess_7" />
+                                                          <ui:OpenBrowser Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" x:Key=".jpeg" BrowserType="Chrome" CommunicationMethod="Native" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="OpenBrowser_7" UiBrowser="[browser]" Url="[FileTemp]">
+                                                            <ui:OpenBrowser.Body>
+                                                              <ActivityAction x:TypeArguments="x:Object">
+                                                                <ActivityAction.Argument>
+                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                                </ActivityAction.Argument>
+                                                              </ActivityAction>
+                                                            </ui:OpenBrowser.Body>
+                                                          </ui:OpenBrowser>
+                                                          <ui:OpenBrowser Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" x:Key=".png" BrowserType="Chrome" CommunicationMethod="Native" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="OpenBrowser_8" UiBrowser="[browser]" Url="[FileTemp]">
+                                                            <ui:OpenBrowser.Body>
+                                                              <ActivityAction x:TypeArguments="x:Object">
+                                                                <ActivityAction.Argument>
+                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                                </ActivityAction.Argument>
+                                                              </ActivityAction>
+                                                            </ui:OpenBrowser.Body>
+                                                          </ui:OpenBrowser>
+                                                          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" x:Key=".xls" FileName="[FileTemp]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="StartProcess_8" />
+                                                          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" x:Key=".doc" FileName="[FileTemp]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="StartProcess_9" />
+                                                          <ui:Continue x:Key=".db" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_7" />
+                                                          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" x:Key=".txt" FileName="[FileTemp]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="StartProcess_10" />
+                                                          <ui:OpenBrowser Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" x:Key=".jpg" BrowserType="Chrome" CommunicationMethod="Native" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="OpenBrowser_9" UiBrowser="[browser]" Url="[FileTemp]">
+                                                            <ui:OpenBrowser.Body>
+                                                              <ActivityAction x:TypeArguments="x:Object">
+                                                                <ActivityAction.Argument>
+                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                                </ActivityAction.Argument>
+                                                              </ActivityAction>
+                                                            </ui:OpenBrowser.Body>
+                                                          </ui:OpenBrowser>
+                                                          <ui:OpenBrowser Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" x:Key=".gif" BrowserType="Chrome" CommunicationMethod="Native" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_10" UiBrowser="[browser]" Url="[FileTemp]">
+                                                            <ui:OpenBrowser.Body>
+                                                              <ActivityAction x:TypeArguments="x:Object">
+                                                                <ActivityAction.Argument>
+                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                                </ActivityAction.Argument>
+                                                              </ActivityAction>
+                                                            </ui:OpenBrowser.Body>
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </ui:OpenBrowser>
+                                                        </Switch>
+                                                        <ui:MessageBox Buttons="YesNo" Caption="CONFIRMAÇÃO DE LANÇAMENTO" ChosenButton="[DocumentoFiscal]" DisplayName="PERGUNTA SE FISCAL" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[&quot;ESSE É UM DOCUMENTO FISCAL?&quot;]" TopMost="True">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </ui:MessageBox>
+                                                        <If Condition="[DocumentoFiscal=&quot;No&quot;]" DisplayName="SE FISCAL" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_7">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <If.Then>
+                                                            <Sequence sap:VirtualizedContainerService.HintSize="242,205" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <Switch x:TypeArguments="x:String" DisplayName="FECHA ARQUIVO ABERTO" Expression="[extensao]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Switch`1_7">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:CloseTab x:Key=".pdf" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_21" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".xlsx" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_21" ProcessName="excel" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".docx" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_22" ProcessName="WINWORD" />
+                                                                <ui:CloseTab x:Key=".jpeg" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_22" />
+                                                                <ui:CloseTab x:Key=".png" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_23" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".xls" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_23" ProcessName="excel" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".doc" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_24" ProcessName="WINWORD" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".txt" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_25" ProcessName="notepad" />
+                                                                <ui:CloseTab x:Key=".jpg" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_24" />
+                                                                <ui:CloseTab x:Key=".gif" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_25" />
+                                                              </Switch>
+                                                              <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_9" />
+                                                            </Sequence>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <ui:MessageBox Buttons="YesNo" Caption="CONFIRMAÇÃO DE LANÇAMENTO" ChosenButton="[ArquivoLancado]" DisplayName="PERGUNTA SOBRE LANÇAMENTO" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_11" Text="[&quot;O DOCUMENTO JA FOI LANÇADO?&quot;]" TopMost="True">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                            </ui:MessageBox>
+                                                          </If.Else>
+                                                        </If>
+                                                        <If Condition="[ArquivoLancado=&quot;Yes&quot;]" DisplayName="SE LANÇADO" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_8">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <If.Then>
+                                                            <Sequence sap:VirtualizedContainerService.HintSize="242,205" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <Switch x:TypeArguments="x:String" DisplayName="FECHA ARQUIVO ABERTO" Expression="[extensao]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Switch`1_8">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:CloseTab x:Key=".pdf" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_26" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".xlsx" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_26" ProcessName="excel" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".docx" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_27" ProcessName="WINWORD" />
+                                                                <ui:CloseTab x:Key=".jpeg" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_27" />
+                                                                <ui:CloseTab x:Key=".png" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_28" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".xls" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_28" ProcessName="excel" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".doc" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_29" ProcessName="WINWORD" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".txt" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_30" ProcessName="notepad" />
+                                                                <ui:CloseTab x:Key=".jpg" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_29" />
+                                                                <ui:CloseTab x:Key=".gif" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_30" />
+                                                              </Switch>
+                                                              <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_10" />
+                                                            </Sequence>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <ui:MessageBox Caption="{x:Null}" Buttons="YesNo" ChosenButton="[CompetenciaAtual]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_12" Text="[&quot;O DOCUMENTO É DA COMPETENCIA ATUAL?&quot;]" />
+                                                          </If.Else>
+                                                        </If>
+                                                        <If Condition="[CompetenciaAtual=&quot;Yes&quot;]" DisplayName="SE COMPETENCIA" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_10">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <If.Then>
+                                                            <Sequence sap:VirtualizedContainerService.HintSize="242,325" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:MessageBox Buttons="YesNo" Caption="CONFIRMAÇÃO DE LANÇAMENTO" ChosenButton="[ArquivoLancado]" DisplayName="PERGUNTA SOBRE LANÇAMENTO" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_13" Text="[&quot;O DOCUMENTO FOI LANÇADO?&quot;]" TopMost="True">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                              </ui:MessageBox>
+                                                              <Switch x:TypeArguments="x:String" DisplayName="FECHA ARQUIVO ABERTO" Expression="[extensao]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Switch`1_9">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:CloseTab x:Key=".pdf" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_31" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".xlsx" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_31" ProcessName="excel" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".docx" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_32" ProcessName="WINWORD" />
+                                                                <ui:CloseTab x:Key=".jpeg" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_32" />
+                                                                <ui:CloseTab x:Key=".png" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_33" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".xls" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_33" ProcessName="excel" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".doc" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_34" ProcessName="WINWORD" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".txt" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_35" ProcessName="notepad" />
+                                                                <ui:CloseTab x:Key=".jpg" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_34" />
+                                                                <ui:CloseTab x:Key=".gif" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_35" />
+                                                              </Switch>
+                                                              <If Condition="[ArquivoLancado=&quot;Yes&quot;]" DisplayName="SE LANÇADO" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_9">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <If.Then>
+                                                                  <Sequence sap:VirtualizedContainerService.HintSize="426,349" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="ui:GenericValue">[cont]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="ui:GenericValue">[PastaMesV.LastIndexOf("\")]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PastaAnoV+&quot;\&quot;+In_SetorColab+&quot;\&quot;+PastaMesV.Substring(cont+1)+&quot;\@LANÇADO-&quot;+nomeArquivo+&quot;-&quot;+In_NomeColab+&quot;-&quot;+In_SetorColab+&quot;-&quot;+DateTime.Now.Day.ToString+&quot;-&quot;+DateTime.Now.Month.ToString+&quot;-&quot;+DateTime.Now.Year.ToString+extensao]" DisplayName="COPIAR PARA FISCAL" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_4" Overwrite="False" Path="[FileTemp]" />
+                                                                  </Sequence>
+                                                                </If.Then>
+                                                                <If.Else>
+                                                                  <Sequence DisplayName="ALTERA NOME PARA NÃO LANÇADO + MOTIVO" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                                    <Sequence.Variables>
+                                                                      <Variable x:TypeArguments="ui:GenericValue" Name="MotivoLancamento" />
+                                                                    </Sequence.Variables>
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:InputDialog Options="{x:Null}" DisplayName="MOTIVO NÃO LANÇAMENTO" sap:VirtualizedContainerService.HintSize="384,92" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="MOTIVO" Title="MOTIVO DO NÃO LANÇAMENTO">
+                                                                      <ui:InputDialog.Result>
+                                                                        <OutArgument x:TypeArguments="ui:GenericValue">[MotivoLancamento]</OutArgument>
+                                                                      </ui:InputDialog.Result>
+                                                                    </ui:InputDialog>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="ui:GenericValue">[cont]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="ui:GenericValue">[PastaMesV.LastIndexOf("\")]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PastaAnoV+&quot;\&quot;+In_SetorColab+&quot;\&quot;+PastaMesV.Substring(cont+1)+&quot;\@LANÇADO-&quot;+nomeArquivo+&quot;-&quot;+In_NomeColab+&quot;-&quot;+In_SetorColab+&quot;-&quot;+DateTime.Now.Day.ToString+&quot;-&quot;+DateTime.Now.Month.ToString+&quot;-&quot;+DateTime.Now.Year.ToString+extensao]" DisplayName="COPIAR PARA FISCAL" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_5" Overwrite="False" Path="[FileTemp]" />
+                                                                  </Sequence>
+                                                                </If.Else>
+                                                              </If>
+                                                            </Sequence>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Sequence sap:VirtualizedContainerService.HintSize="426,661" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <Switch x:TypeArguments="x:String" DisplayName="FECHA ARQUIVO ABERTO" Expression="[extensao]" sap:VirtualizedContainerService.HintSize="384,51" sap2010:WorkflowViewState.IdRef="Switch`1_10">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:CloseTab x:Key=".pdf" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_36" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".xlsx" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_36" ProcessName="excel" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".docx" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_37" ProcessName="WINWORD" />
+                                                                <ui:CloseTab x:Key=".jpeg" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_37" />
+                                                                <ui:CloseTab x:Key=".png" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_38" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".xls" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_38" ProcessName="excel" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".doc" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_39" ProcessName="WINWORD" />
+                                                                <ui:KillProcess Process="{x:Null}" x:Key=".txt" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_40" ProcessName="notepad" />
+                                                                <ui:CloseTab x:Key=".jpg" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_39" />
+                                                                <ui:CloseTab x:Key=".gif" Browser="[browser]" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_40" />
+                                                              </Switch>
+                                                              <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="384,84" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[PastaEmpresaV+&quot;\OS&quot;]" />
+                                                              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[PastaEmpresaV+&quot;\OS\&quot;+nomeArquivo.Replace(&quot; &quot;,&quot;&quot;)+extensao]" DisplayName="COPIAR PARA OS" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_6" Overwrite="False" Path="[FileTemp]" />
+                                                              <ui:MoveFile ContinueOnError="{x:Null}" Destination="[PastaEmpresaV+&quot;\OS\&quot;+&quot;NÃO LANÇADO - &quot;+nomeArquivo+&quot;OUTRA COMPETENCIA - &quot;+DateTime.Now.Day.ToString+&quot;-&quot;+DateTime.Now.Month.ToString+&quot;-&quot;+DateTime.Now.Year.ToString+&quot;-&quot;+In_NomeColab+extensao]" DisplayName="RENOMEOU ARQUIVO" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_8" Overwrite="False" Path="[PastaEmpresaV+&quot;\OS\&quot;+nomeArquivo.Replace(&quot; &quot;,&quot;&quot;)+extensao]" />
+                                                            </Sequence>
+                                                          </If.Else>
+                                                        </If>
+                                                      </Sequence>
+                                                    </Sequence>
+                                                  </ActivityAction>
+                                                </ui:ForEach.Body>
+                                              </ui:ForEach>
+                                              <FlowStep.Next>
+                                                <FlowStep x:Name="__ReferenceID7">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">169,1100</av:Point>
+                                                      <av:Size x:Key="ShapeSize">262,60</av:Size>
+                                                      <av:PointCollection x:Key="ConnectorLocation">300,1160 300,1234</av:PointCollection>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="ui:GenericValue">[cont]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="ui:GenericValue">[PastaMesV.LastIndexOf("\")]</InArgument>
+                                                    </Assign.Value>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Assign>
+                                                  <FlowStep.Next>
+                                                    <FlowStep x:Name="__ReferenceID2">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <av:Point x:Key="ShapeLocation">200,1234</av:Point>
+                                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                          <av:PointCollection x:Key="ConnectorLocation">300,1285 297,1285 297,1306.5</av:PointCollection>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <ui:MessageBox Caption="{x:Null}" Buttons="YesNo" ChosenButton="[ProximaPasta]" DisplayName="PERGUNTA SE CONTINUA" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[&quot;TODOS OS ARQUIVOS DA EMPRESA:  &quot;+PastaEmpresaV.Substring(30)+&quot;  REFERENTE AO MÊS:   &quot;+PastaMesV.Substring(cont+1) + &quot;  FORAM VISUALIZADOS!&quot;]" TopMost="True">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </ui:MessageBox>
+                                                      <FlowStep.Next>
+                                                        <x:Reference>__ReferenceID0</x:Reference>
+                                                      </FlowStep.Next>
+                                                    </FlowStep>
+                                                  </FlowStep.Next>
+                                                </FlowStep>
+                                              </FlowStep.Next>
+                                            </FlowStep>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowDecision.True>
+              <FlowDecision.False>
+                <x:Reference>__ReferenceID1</x:Reference>
+              </FlowDecision.False>
+            </FlowDecision>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowDecision.True>
+      <FlowDecision.False>
+        <x:Reference>__ReferenceID1</x:Reference>
+      </FlowDecision.False>
+    </FlowDecision>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID11</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
+    <x:Reference>__ReferenceID13</x:Reference>
+  </Flowchart>
+</Activity>
