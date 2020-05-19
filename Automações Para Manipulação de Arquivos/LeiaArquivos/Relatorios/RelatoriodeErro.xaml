@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1234,585</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>914,661</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RelatoriodeErro_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -61,6 +61,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="RelatoriodeErro" sap:VirtualizedContainerService.HintSize="376,323" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -69,8 +70,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="MENSAGEM DE FINALIZAÇÃO" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;O ROBÔ SERÁ FINALIZADO!&quot;]" TopMost="True" />
-    <ui:WriteTextFile DisplayName="GERADOR DE ERRO" FileName="[&quot;\\srvnucleo01\setores\Publico\Atualizacao-Robo\Relatorio de Erros\Erro de execução usuario - &quot;+In_NomeColab+&quot;-&quot;+DateTime.Now.Day.ToString+&quot;-&quot;+DateTime.Now.Month.ToString+&quot;-&quot;+DateTime.Now.Year.ToString+&quot;-&quot;+DateTime.Now.Hour.ToString+&quot;-&quot;+DateTime.Now.Minute.ToString+&quot;-&quot;+DateTime.Now.Second.ToString+&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;UM ERRO FOI ENCONTADO! &quot;+&quot; Possivel motivo: DirectoryNotFound &quot; + &quot;Referente o caminho: &quot; + PastaMes]">
+    <ui:WriteTextFile DisplayName="GERADOR DE ERRO" FileName="[&quot;\\srvnucleo01\setores\publico\Atualizacao-Robo\Relatorios\Relatorio de Erros\Erro de execução usuario - &quot;+In_NomeColab+&quot;-&quot;+DateTime.Now.Day.ToString+&quot;-&quot;+DateTime.Now.Month.ToString+&quot;-&quot;+DateTime.Now.Year.ToString+&quot;-&quot;+DateTime.Now.Hour.ToString+&quot;-&quot;+DateTime.Now.Minute.ToString+&quot;-&quot;+DateTime.Now.Second.ToString+&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;UM ERRO FOI ENCONTADO! &quot;+&quot; Possivel motivo: DirectoryNotFound &quot; + &quot;Referente o caminho: &quot; + PastaMes]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -78,5 +78,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:WriteTextFile>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="MENSAGEM DE FINALIZAÇÃO" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;O ROBÔ SERÁ FINALIZADO!&quot;]" TopMost="True" />
   </Sequence>
 </Activity>
