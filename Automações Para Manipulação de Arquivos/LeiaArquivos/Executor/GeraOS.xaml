@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Visualiza" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="FluxoGeraOS" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="In_PastaInicio" Type="InArgument(x:String)" />
     <x:Property Name="In_SetorColab" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1231,1439</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,1439</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Visualiza_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -60,7 +60,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Visualiza" sap:VirtualizedContainerService.HintSize="714,1274" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="GeraOS" sap:VirtualizedContainerService.HintSize="714,1274" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="ContinuaCarimbo" />
       <Variable x:TypeArguments="s:String[]" Name="files" />
@@ -288,10 +288,10 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="CONTABIL" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <Sequence DisplayName="CONTABIL" sap:VirtualizedContainerService.HintSize="376,608" sap2010:WorkflowViewState.IdRef="Sequence_13">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -498,13 +498,13 @@
                                   <av:Size x:Key="ShapeSize">200,51</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="749,2780" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[files]">
+                              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1056,3646" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[files]">
                                 <ui:ForEach.Body>
                                   <ActivityAction x:TypeArguments="x:String">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="INTERAÇÃO COM O ARQUIVO" sap:VirtualizedContainerService.HintSize="713,2646" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                    <Sequence DisplayName="INTERAÇÃO COM O ARQUIVO" sap:VirtualizedContainerService.HintSize="1020,3512" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="extensao" />
                                         <Variable x:TypeArguments="x:String" Name="nomeArquivo" />
@@ -519,7 +519,7 @@
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign DisplayName="CAPTURA EXTENSÃO DO ARQUIVO" sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                      <Assign DisplayName="CAPTURA EXTENSÃO DO ARQUIVO" sap:VirtualizedContainerService.HintSize="978,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[extensao]</OutArgument>
                                         </Assign.To>
@@ -527,7 +527,7 @@
                                           <InArgument x:TypeArguments="x:String">[Path.GetExtension(file)]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <If sap2010:Annotation.AnnotationText="Ignorar arquivos .db que normalmente são arquivos Thumbs , arquivos temporarios que atrapalham a execução do robô." Condition="[extensao=&quot;.db&quot;]" DisplayName="SE EXTENSÃO .db" sap:VirtualizedContainerService.HintSize="671,138" sap2010:WorkflowViewState.IdRef="If_8">
+                                      <If sap2010:Annotation.AnnotationText="Ignorar arquivos .db que normalmente são arquivos Thumbs , arquivos temporarios que atrapalham a execução do robô." Condition="[extensao=&quot;.db&quot;]" DisplayName="SE EXTENSÃO .db" sap:VirtualizedContainerService.HintSize="978,138" sap2010:WorkflowViewState.IdRef="If_8">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -539,7 +539,7 @@
                                           <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
                                         </If.Then>
                                       </If>
-                                      <Assign DisplayName="CAPTURA NOME DO ARQUIVO" sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                      <Assign DisplayName="CAPTURA NOME DO ARQUIVO" sap:VirtualizedContainerService.HintSize="978,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[nomeArquivo]</OutArgument>
                                         </Assign.To>
@@ -547,7 +547,7 @@
                                           <InArgument x:TypeArguments="x:String">[Path.GetFileNameWithoutExtension(file)]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <If sap2010:Annotation.AnnotationText="Ignora arquivo temporario que possui o nome do arquivo com ~" Condition="[nomeArquivo.Substring(0,1)=&quot;~&quot;]" DisplayName="SE ARQUIVO TEMPORARIO" sap:VirtualizedContainerService.HintSize="671,108" sap2010:WorkflowViewState.IdRef="If_9">
+                                      <If sap2010:Annotation.AnnotationText="Ignora arquivo temporario que possui o nome do arquivo com ~" Condition="[nomeArquivo.Substring(0,1)=&quot;~&quot;]" DisplayName="SE ARQUIVO TEMPORARIO" sap:VirtualizedContainerService.HintSize="978,108" sap2010:WorkflowViewState.IdRef="If_9">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -559,7 +559,7 @@
                                           <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
                                         </If.Then>
                                       </If>
-                                      <Assign DisplayName="Arquivo de Protocolo" sap:VirtualizedContainerService.HintSize="671,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                      <Assign DisplayName="Arquivo de Protocolo" sap:VirtualizedContainerService.HintSize="978,60" sap2010:WorkflowViewState.IdRef="Assign_27">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:Int32">[ArqProt]</OutArgument>
                                         </Assign.To>
@@ -567,16 +567,16 @@
                                           <InArgument x:TypeArguments="x:Int32">[nomeArquivo.Length]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <If sap2010:Annotation.AnnotationText="Ignora os arquivos TXT gerados pelo setor de arquivo com o numero de protocolo referente a entrada do documento." Condition="[ArqProt&gt;=4]" DisplayName="SE ARQUIVO DE PROTOCOLO" sap:VirtualizedContainerService.HintSize="671,138" sap2010:WorkflowViewState.IdRef="If_12">
+                                      <If sap2010:Annotation.AnnotationText="Ignora os arquivos TXT gerados pelo setor de arquivo com o numero de protocolo referente a entrada do documento." Condition="[ArqProt&gt;=4]" DisplayName="SE ARQUIVO DE PROTOCOLO" sap:VirtualizedContainerService.HintSize="978,541" sap2010:WorkflowViewState.IdRef="If_12">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <If Condition="[nomeArquivo.Substring(0,4)=&quot;PROT&quot;]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_11">
+                                          <If Condition="[nomeArquivo.Substring(0,4)=&quot;PROT&quot;]" sap:VirtualizedContainerService.HintSize="833,362" sap2010:WorkflowViewState.IdRef="If_11">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -584,14 +584,21 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <If.Then>
-                                              <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_3" />
-                                            </If.Then>
-                                            <If.Else>
-                                              <If Condition="[nomeArquivo.Substring(0,2)=&quot;SS&quot;]" DisplayName="SE NOME DO ARQUIVO SS" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_10">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_3" />
+                                              </Sequence>
+                                            </If.Then>
+                                            <If.Else>
+                                              <If Condition="[nomeArquivo.Substring(0,2)=&quot;SS&quot;]" DisplayName="SE NOME DO ARQUIVO SS" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_10">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <If.Then>
@@ -602,7 +609,7 @@
                                           </If>
                                         </If.Then>
                                       </If>
-                                      <ui:MultipleAssign sap2010:Annotation.AnnotationText="Manipulação na cadeia de caracteres referente ao diretorio. " DisplayName="DATA DA CHEGADA" sap:VirtualizedContainerService.HintSize="671,233" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                                      <ui:MultipleAssign sap2010:Annotation.AnnotationText="Manipulação na cadeia de caracteres referente ao diretorio. " DisplayName="DATA DA CHEGADA" sap:VirtualizedContainerService.HintSize="978,233" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
                                         <ui:MultipleAssign.AssignOperations>
                                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
@@ -634,7 +641,7 @@
                                                 <OutArgument x:TypeArguments="x:String">[DataChegada]</OutArgument>
                                               </ui:AssignOperation.To>
                                               <ui:AssignOperation.Value>
-                                                <InArgument x:TypeArguments="x:String">[DataChegada.Substring(15)]</InArgument>
+                                                <InArgument x:TypeArguments="x:String">[DataChegada.Substring(15,10)]</InArgument>
                                               </ui:AssignOperation.Value>
                                             </ui:AssignOperation>
                                           </scg:List>
@@ -647,7 +654,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:MultipleAssign>
-                                      <If sap2010:Annotation.AnnotationText="Aqui verifica se o arquivo já foi lançado, através da analise do nome do arquivo. Se ele já tiver sido lançado, será ignorado." Condition="[nomeArquivo.Contains(&quot;O.S-GERADA&quot;)]" DisplayName="SE JÁ LANÇADO NO NOME" sap:VirtualizedContainerService.HintSize="671,539" sap2010:WorkflowViewState.IdRef="If_13">
+                                      <If sap2010:Annotation.AnnotationText="Aqui verifica se o arquivo já foi lançado, através da analise do nome do arquivo. Se ele já tiver sido lançado, será ignorado." Condition="[nomeArquivo.Contains(&quot;O.S-GERADA&quot;)]" DisplayName="SE JÁ LANÇADO NO NOME" sap:VirtualizedContainerService.HintSize="978,539" sap2010:WorkflowViewState.IdRef="If_13">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -685,7 +692,7 @@
                                           </Sequence>
                                         </If.Else>
                                       </If>
-                                      <Sequence DisplayName="TRATA ARQUIVO" sap:VirtualizedContainerService.HintSize="671,898" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                      <Sequence DisplayName="TRATA ARQUIVO" sap:VirtualizedContainerService.HintSize="978,1361" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="ArquivoLancado" />
                                           <Variable x:TypeArguments="x:String" Name="CompetenciaAtual" />
@@ -700,7 +707,7 @@
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence sap2010:Annotation.AnnotationText="Fluxo de trabalho que abre os arquivos e trata confome a necessidade." DisplayName="Abrir arquivos" sap:VirtualizedContainerService.HintSize="484,123" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                        <Sequence sap2010:Annotation.AnnotationText="Fluxo de trabalho que abre os arquivos e trata confome a necessidade." DisplayName="Abrir arquivos" sap:VirtualizedContainerService.HintSize="571,123" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="x:String" Name="erroprox" />
                                           </Sequence.Variables>
@@ -713,30 +720,14 @@
                                           </sap:WorkflowViewStateService.ViewState>
                                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Invoca fluxo de trabalho que abre os arquivos." DisplayName="Invoke AbreArquivos workflow" sap:VirtualizedContainerService.HintSize="200,93" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Inicializadores\AbreArquivos.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
-                                              <InArgument x:TypeArguments="x:String" x:Key="In_extensao">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="extensao" />
-                                              </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="In_FileTemp">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FileTemp" />
-                                              </InArgument>
-                                              <OutArgument x:TypeArguments="ui:Browser" x:Key="Out_browser">
-                                                <mva:VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="browser" />
-                                              </OutArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="In_DataChegada">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DataChegada" />
-                                              </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="In_PastaMes">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="PastaMes" />
-                                              </InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="In_nomearquivo">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="nomeArquivo" />
-                                              </InArgument>
-                                              <OutArgument x:TypeArguments="x:String" x:Key="Out_erroprox">
-                                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="erroprox" />
-                                              </OutArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="In_NomeColab">
-                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_NomeColab" />
-                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="In_extensao">[extensao]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="In_FileTemp">[FileTemp]</InArgument>
+                                              <OutArgument x:TypeArguments="ui:Browser" x:Key="Out_browser">[browser]</OutArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="In_DataChegada">[DataChegada]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="In_PastaMes">[PastaMes]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="In_nomearquivo">[nomeArquivo]</InArgument>
+                                              <OutArgument x:TypeArguments="x:String" x:Key="Out_erroprox">[erroprox]</OutArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="In_NomeColab">[In_NomeColab]</InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -758,7 +749,12 @@
                                             </If.Then>
                                           </If>
                                         </Sequence>
-                                        <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="InputDialog_14" IsPassword="False" Label="INFORME O NUMERO DA O.S GERADA ( SOMENTE NUMEROS)" Title="GERE A O.S">
+                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MonitoraGeracaoOS workflow" sap:VirtualizedContainerService.HintSize="571,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Executor\MonitoraGeracaoOS.xaml">
+                                          <ui:InvokeWorkflowFile.Arguments>
+                                            <OutArgument x:TypeArguments="x:String" x:Key="Out_NumOS">[NumeroOS]</OutArgument>
+                                          </ui:InvokeWorkflowFile.Arguments>
+                                        </ui:InvokeWorkflowFile>
+                                        <ui:InputDialog DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="571,92" sap2010:WorkflowViewState.IdRef="InputDialog_14" IsPassword="False" Label="INFORME O NUMERO DA O.S GERADA ( SOMENTE NUMEROS)" Options="[{NumeroOS}]" Title="GERE A O.S">
                                           <ui:InputDialog.Result>
                                             <OutArgument x:TypeArguments="x:String">[NumeroOS]</OutArgument>
                                           </ui:InputDialog.Result>
@@ -769,7 +765,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:InputDialog>
-                                        <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="484,257" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
+                                        <ui:InterruptibleWhile Condition="[NumeroOS.Length&lt;&gt;11]" DisplayName="While" sap:VirtualizedContainerService.HintSize="571,257" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
                                           <ui:InterruptibleWhile.Body>
                                             <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_15" IsPassword="False" Label="INFORME O NUMERO DA O.S GERADA ( SOMENTE NUMEROS)" Title="GERE A O.S">
                                               <ui:InputDialog.Result>
@@ -783,11 +779,8 @@
                                               </sap:WorkflowViewStateService.ViewState>
                                             </ui:InputDialog>
                                           </ui:InterruptibleWhile.Body>
-                                          <ui:InterruptibleWhile.Condition>
-                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="NumeroOS=&quot;&quot;" />
-                                          </ui:InterruptibleWhile.Condition>
                                         </ui:InterruptibleWhile>
-                                        <If Condition="[NumeroOS&lt;&gt;&quot;&quot;]" DisplayName="SE LANÇADO" sap:VirtualizedContainerService.HintSize="484,214" sap2010:WorkflowViewState.IdRef="If_15">
+                                        <If Condition="[NumeroOS.Length&gt;8]" DisplayName="SE LANÇADO" sap:VirtualizedContainerService.HintSize="571,550" sap2010:WorkflowViewState.IdRef="If_15">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -795,10 +788,10 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <If.Then>
-                                            <Sequence DisplayName="ARQUIVO LANÇADO" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                            <Sequence DisplayName="ARQUIVO LANÇADO" sap:VirtualizedContainerService.HintSize="426,402" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
